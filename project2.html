@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romantic Proposal</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ff8fb1, #ffb3d9);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 450px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    #message {
+        font-size: 22px;
+        min-height: 120px;
+        transition: opacity 0.5s ease;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 15px 25px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #ff4d79;
+        background: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>❤️ For My Love ❤️</h1>
+    <div id="message">Touch the button to begin...</div>
+    <button onclick="nextSlide()">Next ❤️</button>
+</div>
+
+<script>
+    const slides = [
+    "Manikandan, I know we fight… but my heart always chooses you ❤️‍🔥💞",
+    "Every day, every moment, I fall for you again and again 😘💕",
+    "You are my happiness, my comfort, my everything 🌹❤️‍🩹",
+    "I may not express it perfectly… but I love you more than words 😔💗",
+    "I want to hold your hand and never let go 🤝💖",
+    "Will you always be mine, Manikandan? 💍❤️"
+];
+
+
+    let index = 0;
+
+    function nextSlide() {
+        const msg = document.getElementById("message");
+        msg.style.opacity = 0;
+
+        setTimeout(() => {
+            msg.innerHTML = slides[index];
+            msg.style.opacity = 1;
+            index = (index + 1) % slides.length;
+        }, 400);
+    }
+</script>
+
+</body>
+</html>
